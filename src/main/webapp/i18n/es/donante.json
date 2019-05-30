@@ -1,0 +1,31 @@
+{
+  "donarApp": {
+    "donante": {
+      "home": {
+        "title": "Donantes",
+        "createLabel": "Crear nuevo Donante",
+        "createOrEditLabel": "Crear o editar Donante"
+      },
+      "created": "Un nuevo Donante ha sido creado con el identificador {{ param }}",
+      "updated": "Un Donante ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Donante ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Donante {{ id }}?"
+      },
+      "detail": {
+        "title": "Donante"
+      },
+      "nombre": "Nombre",
+      "apellido": "Apellido",
+      "direccion": "Direccion",
+      "telefono": "Telefono",
+      "email": "Email",
+      "fechaNacimiento": "Fecha Nacimiento",
+      "sexo": "Sexo",
+      "grupoSanguineo": "Grupo Sanguineo",
+      "factorSanguineo": "Factor Sanguineo",
+      "activo": "Activo",
+      "hospital": "Hospital"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "donarApp": {
+    "empleado": {
+      "home": {
+        "title": "Empleados",
+        "createLabel": "Crear nuevo Empleado",
+        "createOrEditLabel": "Crear o editar Empleado"
+      },
+      "created": "Un nuevo Empleado ha sido creado con el identificador {{ param }}",
+      "updated": "Un Empleado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Empleado ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Empleado {{ id }}?"
+      },
+      "detail": {
+        "title": "Empleado"
+      },
+      "telefono": "Telefono",
+      "fechaNacimiento": "Fecha Nacimiento",
+      "numeroLegajo": "Numero Legajo",
+      "hospital": "Hospital"
+    }
+  }
+}

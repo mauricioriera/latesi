@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="donante">
+            <h2><span jhiTranslate="donarApp.donante.detail.title">Donante</span> {{donante.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="donarApp.donante.nombre">Nombre</span></dt>
+                <dd>
+                    <span>{{donante.nombre}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.apellido">Apellido</span></dt>
+                <dd>
+                    <span>{{donante.apellido}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.direccion">Direccion</span></dt>
+                <dd>
+                    <span>{{donante.direccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{donante.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.email">Email</span></dt>
+                <dd>
+                    <span>{{donante.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.fechaNacimiento">Fecha Nacimiento</span></dt>
+                <dd>
+                    <span>{{donante.fechaNacimiento}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.sexo">Sexo</span></dt>
+                <dd>
+                    <span>{{donante.sexo}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.grupoSanguineo">Grupo Sanguineo</span></dt>
+                <dd>
+                    <span>{{donante.grupoSanguineo}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.factorSanguineo">Factor Sanguineo</span></dt>
+                <dd>
+                    <span>{{donante.factorSanguineo}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.activo">Activo</span></dt>
+                <dd>
+                    <span>{{donante.activo}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.donante.hospital">Hospital</span></dt>
+                <dd>
+                    <div *ngIf="donante.hospital">
+                        <a [routerLink]="['/hospital', donante.hospital?.id, 'view']">{{donante.hospital?.nombre}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/donante', donante.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{
+    "name": "Empleado",
+    "fields": [
+        {
+            "fieldName": "telefono",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechaNacimiento",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "numeroLegajo",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "hospital",
+            "otherEntityRelationshipName": "empleado",
+            "relationshipName": "hospital",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "changelogDate": "20190520152753",
+    "entityTableName": "empleado",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

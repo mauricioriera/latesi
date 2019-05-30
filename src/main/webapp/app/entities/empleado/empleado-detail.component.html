@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="empleado">
+            <h2><span jhiTranslate="donarApp.empleado.detail.title">Empleado</span> {{empleado.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="donarApp.empleado.telefono">Telefono</span></dt>
+                <dd>
+                    <span>{{empleado.telefono}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.empleado.fechaNacimiento">Fecha Nacimiento</span></dt>
+                <dd>
+                    <span>{{empleado.fechaNacimiento}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.empleado.numeroLegajo">Numero Legajo</span></dt>
+                <dd>
+                    <span>{{empleado.numeroLegajo}}</span>
+                </dd>
+                <dt><span jhiTranslate="donarApp.empleado.hospital">Hospital</span></dt>
+                <dd>
+                    <div *ngIf="empleado.hospital">
+                        <a [routerLink]="['/hospital', empleado.hospital?.id, 'view']">{{empleado.hospital?.nombre}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/empleado', empleado.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

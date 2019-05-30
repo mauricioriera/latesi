@@ -1,0 +1,30 @@
+entity Donante {
+	nombre String required,
+    apellido String required,
+    direccion String required,
+    telefono String required,
+    email String,
+    fechaNacimiento LocalDate required,
+    sexo String required,
+    grupoSanguineo String required,
+    factorSanguineo String required,
+    activo Boolean 
+}
+entity Hospital{
+	nombre String required,
+    direccion String required,
+    email String,
+    telefono String required
+}
+entity Empleado {
+
+    telefono String required,
+    fechaNacimiento LocalDate required,
+    numeroLegajo Integer required
+    
+}
+relationship ManyToOne {
+	Donante{ hospital(nombre) } to Hospital,
+    Empleado{ hospital(nombre) } to Hospital
+}
+

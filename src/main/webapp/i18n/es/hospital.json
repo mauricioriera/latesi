@@ -1,0 +1,24 @@
+{
+  "donarApp": {
+    "hospital": {
+      "home": {
+        "title": "Hospitals",
+        "createLabel": "Crear nuevo Hospital",
+        "createOrEditLabel": "Crear o editar Hospital"
+      },
+      "created": "Un nuevo Hospital ha sido creado con el identificador {{ param }}",
+      "updated": "Un Hospital ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Hospital ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Hospital {{ id }}?"
+      },
+      "detail": {
+        "title": "Hospital"
+      },
+      "nombre": "Nombre",
+      "direccion": "Direccion",
+      "email": "Email",
+      "telefono": "Telefono"
+    }
+  }
+}

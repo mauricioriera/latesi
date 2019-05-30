@@ -46,6 +46,9 @@ public class CacheConfiguration {
             createCache(cm, com.tesis.donar.domain.User.class.getName());
             createCache(cm, com.tesis.donar.domain.Authority.class.getName());
             createCache(cm, com.tesis.donar.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.tesis.donar.domain.Donante.class.getName());
+            createCache(cm, com.tesis.donar.domain.Hospital.class.getName());
+            createCache(cm, com.tesis.donar.domain.Empleado.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

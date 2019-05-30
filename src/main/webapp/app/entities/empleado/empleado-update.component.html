@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-empleado-heading" jhiTranslate="donarApp.empleado.home.createOrEditLabel">Create or edit a Empleado</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!empleado.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="donarApp.empleado.telefono" for="field_telefono">Telefono</label>
+                    <input type="text" class="form-control" name="telefono" id="field_telefono"
+                           formControlName="telefono"/>
+                    <div *ngIf="editForm.get('telefono').invalid && (editForm.get('telefono').dirty || editForm.get('telefono').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('telefono').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="donarApp.empleado.fechaNacimiento" for="field_fechaNacimiento">Fecha Nacimiento</label>
+                    <div class="input-group">
+                        <input id="field_fechaNacimiento" type="text" class="form-control" name="fechaNacimiento" ngbDatepicker  #fechaNacimientoDp="ngbDatepicker" formControlName="fechaNacimiento"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaNacimientoDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('fechaNacimiento').invalid && (editForm.get('fechaNacimiento').dirty || editForm.get('fechaNacimiento').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fechaNacimiento').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="donarApp.empleado.numeroLegajo" for="field_numeroLegajo">Numero Legajo</label>
+                    <input type="number" class="form-control" name="numeroLegajo" id="field_numeroLegajo"
+                           formControlName="numeroLegajo"/>
+                    <div *ngIf="editForm.get('numeroLegajo').invalid && (editForm.get('numeroLegajo').dirty || editForm.get('numeroLegajo').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('numeroLegajo').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('numeroLegajo')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="donarApp.empleado.hospital" for="field_hospital">Hospital</label>
+                    <select class="form-control" id="field_hospital" name="hospital" formControlName="hospital">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="hospitalOption.id === editForm.get('hospital').value?.id ? editForm.get('hospital').value : hospitalOption" *ngFor="let hospitalOption of hospitals; trackBy: trackHospitalById">{{hospitalOption.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
